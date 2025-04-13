@@ -25,8 +25,8 @@ public class AuthController {
         return authService.auth(userDto);
     }
 
-    @DeleteMapping(path = "/delete")
-    public void deleteUser(@RequestParam(value = "chat_id") Long chatId) {
+    @DeleteMapping(path = "/delete/{chatId}")
+    public void deleteUser(@PathVariable Long chatId) {
         authService.deleteUser(chatId);
     }
 }
